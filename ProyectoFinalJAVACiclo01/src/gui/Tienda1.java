@@ -180,6 +180,10 @@ public class Tienda1 extends JFrame  implements ActionListener{
 				actionPerfomedMntmCceramico(e);
 			}
 			
+			if (mntmLceramico==e.getSource()) {
+				actionPerfomedMntmLceramico(e);
+			}
+			
 			if (mntmMceramico==e.getSource()) {
 				actionPerfomedMntmMceramico(e);
 			}
@@ -232,6 +236,12 @@ public class Tienda1 extends JFrame  implements ActionListener{
 			ModificarCerámico ventana2 = new ModificarCerámico ();
 			ventana2.setVisible(true);
 			ModificarCerámico.Modelo2();
+		}
+		
+		public void actionPerfomedMntmLceramico(ActionEvent e) {
+			ListarCeramico ventana3 = new ListarCeramico ();
+			ventana3.setVisible(true);
+			
 		}
 		
 		

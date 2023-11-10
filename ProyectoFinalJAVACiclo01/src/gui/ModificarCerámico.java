@@ -204,9 +204,6 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 			
 			private void guardarCambios() {
 		        if (modeloActual != null) {
-		            // Actualizar los datos del modelo actual con los valores de los campos de texto
-		           
-			
-		        }
+}
 			}
 		}

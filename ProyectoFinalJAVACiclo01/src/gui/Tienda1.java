@@ -72,10 +72,10 @@ public class Tienda1 extends JFrame  implements ActionListener{
 	public static int contenido4 = 10;
 	
 	// Porcentajes de descuento
-	public static double porcentaje1 = 7.5;
-	public static double porcentaje2 = 10.0;
-	public static double porcentaje3 = 12.5;
-	public static double porcentaje4 = 15.0;
+	public static double porcentaje1 = 0.75;
+	public static double porcentaje2 = 0.10;
+	public static double porcentaje3 = 1.25;
+	public static double porcentaje4 = 1.5;
 	
 	// Obsequio
 	public static String tipoObsequio = "Lapicero";
@@ -246,7 +246,8 @@ public class Tienda1 extends JFrame  implements ActionListener{
 		
 		
 		public void actionPerfomedMntmVender(ActionEvent e) {
-			
+			Vender ventana4 = new Vender();
+			ventana4.setVisible(true);
 		}
 		
 		
@@ -276,7 +277,8 @@ public class Tienda1 extends JFrame  implements ActionListener{
 		
 		
 		public void actionPerfomedMntmAdlTienda(ActionEvent e) {
-			
+			AcercaDeLaTienda ventana10 = new AcercaDeLaTienda();
+			ventana10.setVisible(true);  
 		}
 		
 		

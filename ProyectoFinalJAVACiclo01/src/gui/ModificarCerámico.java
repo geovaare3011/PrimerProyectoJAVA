@@ -1,7 +1,6 @@
 package gui;
 
 
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -32,12 +31,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	private static JTextField txtContenido;
 	private ModificarCerámico modeloActual;
 	private JButton btnGuardar;
-	private double precio;
-    private double ancho;
-    private double largo;
-    private double espesor;
-    private int contenido;
-
+	
 	
 	//Crea la GUI
 	public ModificarCerámico() {
@@ -160,44 +154,44 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 			
 			switch(modelo) {
 			
-				case 0:
-					txtPrecio.setText("92.56");
-					txtAncho.setText("62.0");
-					txtLargo.setText("62.0");
-					txtEspesor.setText("8");
-					txtContenido.setText("6");
-					break;
+			case 0:
+				txtPrecio.setText("" + Tienda1.precio0);
+				txtAncho.setText("" + Tienda1.ancho0);
+				txtLargo.setText("" + Tienda1.largo0);
+				txtEspesor.setText("" + Tienda1.espesor0);
+				txtContenido.setText("" + Tienda1.contenido0);
+				break;
+			
+			case 1:
+				txtPrecio.setText("" + Tienda1.precio1);
+				txtAncho.setText("" + Tienda1.ancho1);
+				txtLargo.setText("" + Tienda1.largo1);
+				txtEspesor.setText("" + Tienda1.espesor1);
+				txtContenido.setText("" + Tienda1.contenido1);
+				break;
+			
+			case 2:
+				txtPrecio.setText("" + Tienda1.precio2);
+				txtAncho.setText("" + Tienda1.ancho2);
+				txtLargo.setText("" + Tienda1.largo2);
+				txtEspesor.setText("" + Tienda1.espesor2);
+				txtContenido.setText("" + Tienda1.contenido2);
+				break;
 				
-				case 1:
-					txtPrecio.setText("42.77");
-					txtAncho.setText("60");
-					txtLargo.setText("60");
-					txtEspesor.setText("8.5");
-					txtContenido.setText("4");
-					break;
+			case 3:
+				txtPrecio.setText("" + Tienda1.precio3);
+				txtAncho.setText("" + Tienda1.ancho3);
+				txtLargo.setText("" + Tienda1.largo3);
+				txtEspesor.setText("" + Tienda1.espesor3);
+				txtContenido.setText("" + Tienda1.contenido3);
+				break;
 				
-				case 2:
-					txtPrecio.setText("52.45");
-					txtAncho.setText("45");
-					txtLargo.setText("45");
-					txtEspesor.setText("6.5");
-					txtContenido.setText("12");
-					break;
-					
-				case 3:
-					txtPrecio.setText("55.89");
-					txtAncho.setText("80");
-					txtLargo.setText("120");
-					txtEspesor.setText("6.8");
-					txtContenido.setText("9");
-					break;
-					
-				default:
-					txtPrecio.setText("45");
-					txtAncho.setText("45");
-					txtLargo.setText("11.8");
-					txtEspesor.setText("7.2");
-					txtContenido.setText("10");				
+			default:
+				txtPrecio.setText("" + Tienda1.precio4);
+				txtAncho.setText("" + Tienda1.ancho4);
+				txtLargo.setText("" + Tienda1.largo4);
+				txtEspesor.setText("" + Tienda1.espesor4);
+				txtContenido.setText("" + Tienda1.contenido4);				
 				
 				}	
 			}

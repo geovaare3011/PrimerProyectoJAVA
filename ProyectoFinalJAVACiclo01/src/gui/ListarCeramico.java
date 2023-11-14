@@ -24,6 +24,11 @@ public class ListarCeramico extends JFrame implements ActionListener{
 		iniciarComponentes();
 	}
 
+	private void iniciarComponentes() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Esbozo de método generado automáticamente

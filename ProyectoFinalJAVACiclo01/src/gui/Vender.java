@@ -3,6 +3,7 @@ package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
@@ -149,12 +150,15 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
 	}
 	
 	public void actionPerformedBtnVender(ActionEvent e) {
+		try {
 		
 		//Declaración de variables
+		
 		DecimalFormat df = new DecimalFormat("#.00");
 		double imCom,imDes,imPag;
 		int cant,obsequio;
 		String modelo1;
+		
 		//Entrada de Datos
 		
 		cant = Integer.parseInt(txtCantidad.getText());
@@ -228,10 +232,23 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
 		txtR.append("Tipo de obsequio        : Lapicero" + "\n");
 		txtR.append("Unidades obsequiadas    : " + obsequio);
 		
-	}
-		// Imprime una cadena con un salto de línea al final
-		void imprimir(String cad) {
-			txtR.append(cad + "\n");
-	}
+    } catch (Exception c) {
+        // Este bloque se ejecutará para cualquier otra excepción no capturada
+        mostrarError("Error de sintaxis, puede de que hayas " + "\n"
+        			+"escrito letras o caracteres no adecuados " + "\n"
+        			+"e incluso no hayas escrito nada");
+    }
+    }
+
+
+	public static void mostrarError(String mensaje) {
+	JOptionPane.showOptionDialog(null, mensaje, "ERROR DE SINTAXIS", JOptionPane.DEFAULT_OPTION,
+        JOptionPane.ERROR_MESSAGE, null, new Object[]{}, null);
+}
+
+// Imprime una cadena con un salto de línea al final
+void imprimir(String cad) {
+	txtR.append(cad + "\n");
+}
 	
 }

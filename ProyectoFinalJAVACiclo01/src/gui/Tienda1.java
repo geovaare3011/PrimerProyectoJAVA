@@ -235,7 +235,7 @@ public class Tienda1 extends JFrame  implements ActionListener{
 		public void actionPerfomedMntmMceramico(ActionEvent e) {
 			ModificarCerámico ventana2 = new ModificarCerámico ();
 			ventana2.setVisible(true);
-			ModificarCerámico.Modelo2();
+			
 		}
 		
 		public void actionPerfomedMntmLceramico(ActionEvent e) {
@@ -252,7 +252,8 @@ public class Tienda1 extends JFrame  implements ActionListener{
 		
 		
 		public void actionPerfomedMntmGreportes(ActionEvent e) {
-			
+			GenerarReportes ventana5 = new GenerarReportes();
+			ventana5.setVisible(true);
 		}
 		
 		

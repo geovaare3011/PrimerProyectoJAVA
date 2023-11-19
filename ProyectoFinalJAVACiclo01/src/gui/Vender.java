@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import DatosDeCeramicos.DatosCeramico;
+import Experimentos.VentanaClics;
 
 import javax.swing.JComboBox;
 
@@ -39,8 +40,9 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
 	private JButton btnCerrar;
 	private JScrollPane scrollPane;
 	private JTextArea txtR;
-    private int contador;
     private int contadorClics = 0;
+	public double imCom, imDes, imPag, Imp = 0;
+	public int cant, obsequio;
 
 	private static DatosCeramico ceramicoActual;
 	private static int modelo;
@@ -109,6 +111,171 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
         txtCantidad.setText(ceramicoActual.getCantidad());
     }
 	
+	//Direccionando los botones
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource()==cboModelo) {
+			actualizarDatosCeramico();
+		}
+		if(e.getSource()==btnCerrar) {
+			actionPerformedBtnCerrar(e);
+		}
+		
+		if(e.getSource()==btnVender){
+			actionPerformedBtnVender(e);
+		}
+	
+	}
+	
+	
+	//ItemListener 
+	public void itemStateChanged(ItemEvent e) {
+		if (e.getStateChange() == ItemEvent.SELECTED) {
+			
+			//Entrada de datos
+			
+			modelo = cboModelo.getSelectedIndex();
+			
+			
+			
+			//Precios según el modelo
+			switch (modelo) {
+				
+				case 0:
+					
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+					// Suponiendo que el método cargarDesdeArchivoCinzaPlus es público y estático
+					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
+					
+					break;
+				
+				case 1:
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+					//
+					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
+					break;
+					
+				case 2:
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+					//
+					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
+					break;
+					
+				case 3:
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+					//
+					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
+					break;
+					
+				default:
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+					//
+					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
+			}
+		}
+		
+	}
+
+public void actionPerformedBtnVender(ActionEvent e) {
+	
+	try {
+	
+	//Declaración de variables
+	
+	DecimalFormat df = new DecimalFormat("#.00");
+	String modelo1;
+	
+	//Entrada de Datos
+	
+	cant = Integer.parseInt(txtCantidad.getText());
+	
+	//Obsequios
+	
+	if (cant <= 5)
+		obsequio = cant * Tienda1.obsequioCantidad1;
+	
+	else if (cant <= 10)
+		obsequio = cant * Tienda1.obsequioCantidad2;
+	
+	else
+		obsequio = cant * Tienda1.obsequioCantidad3;
+	
+	//Modelo
+
+	double precio0 = Double.parseDouble(txtPrecio.getText());
+	double precio1 = Double.parseDouble(txtPrecio.getText());
+	double precio2 = Double.parseDouble(txtPrecio.getText());
+	double precio3 = Double.parseDouble(txtPrecio.getText());
+	double precio4 = Double.parseDouble(txtPrecio.getText());
+	
+	
+	if (modelo == 0) {
+		modelo1 = "Cinza Plus";			 
+		imCom = precio0 * cant;
+	}
+	
+	else if (modelo == 1) {
+		modelo1 = "Luxury";
+		imCom = precio1 * cant;
+	}
+	
+	else if (modelo == 2) {
+		modelo1 = "Austria";
+		imCom = precio2 * cant;
+	}
+	
+	else if (modelo == 3) {
+		modelo1 = "Yungay Mix";
+		imCom = precio3 * cant;
+	}
+	
+	else {
+		modelo1 = "Thalía";
+		imCom = precio4 * cant;
+	}
+	
+	//Importe de descuento
+	
+	
+	if (cant >= 1)
+		imDes = imCom * Tienda1.porcentaje1;
+			
+	else if (cant >= 6)
+		imDes = imCom * Tienda1.porcentaje2;
+			
+	else if (cant >= 11)
+		imDes = imCom * Tienda1.porcentaje3;
+			
+	else 
+		imDes = imCom * Tienda1.porcentaje4;
+			
+	
+	//Importe a pagar
+	
+	imPag = imCom - imDes;
+	
+	//Salida de datos
+	
+	txtR.setText("BOLETA DE VENTA Nro. " + contadorClics);
+	imprimir(" " + "\n");
+	txtR.append("Modelo                  : " + modelo1 + "\n");
+	txtR.append("Cantidad adquirida      : " + cant + "\n");
+	txtR.append("Importe compra          : S/. " + df.format(imCom) + "\n");
+	txtR.append("Importe descuento       : S/. " + df.format(imDes) + "\n");
+	txtR.append("Importe pagar           : S/. " + df.format(imPag) + "\n");
+	txtR.append("Tipo de obsequio        : Lapicero" + "\n");
+	txtR.append("Unidades obsequiadas    : " + obsequio);
+		
+    } catch (Exception c) {
+        // Este bloque se ejecutará para cualquier otra excepción no capturada
+        mostrarError("Error de sintaxis, puede de que hayas " + "\n"
+        			+"escrito letras o caracteres no adecuados " + "\n"
+        			+"o incluso no hayas escrito nada, el limite " + "\n"
+        			+"de cantidades es de un valor de 10 digitos maximo");
+    }
+}
+		
+
 public static void Modelo2() {
 		
 		modelo = cboModelo.getSelectedIndex();
@@ -238,9 +405,29 @@ public static void Modelo() {
 		getContentPane().add(btnVender);
 		
      
-		
+
+        btnVender.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent G) {
+                // Incrementa el contador de clics
+                contadorClics++;
+            	Imp = Imp + imPag;
+            	imPag = Imp;
+            		
+                // Muestra un JOptionPane cada 5 clics
+                if(contadorClics % 5 == 1){
+            	DecimalFormat df = new DecimalFormat("#.00");
+            	JOptionPane.showMessageDialog(Vender.this, "Venta Nro. " + (contadorClics-1) + "\n" + 
+            			"Importe total general acumulado: S/. " + df.format(Imp),
+            	 "Avance de ventas", JOptionPane.INFORMATION_MESSAGE);
+            }
+            }
+        });
+
         // Añade el botón al centro de la ventana
         getContentPane().add(btnVender);
+		
+		
         
 		btnCerrar = new JButton("Cerrar");
 		btnCerrar.setBounds(335, 36, 89, 23);
@@ -257,196 +444,11 @@ public static void Modelo() {
 		
 	}
 
-
-
-	//Direccionando los botones
-	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource()==cboModelo) {
-			actualizarDatosCeramico();
-		}
-		if(e.getSource()==btnCerrar) {
-			actionPerformedBtnCerrar(e);
-		}
-		
-		if(e.getSource()==btnVender){
-			actionPerformedBtnVender(e);
-		}
-		if(e.getSource()==btnVender) {
-			AvanceDeVentas(e);
-		}
-		
-	}
-	
-	
 	
 	public void actionPerformedBtnCerrar(ActionEvent e) {
 		dispose();
 	}
-	
-	//ItemListener 
-	public void itemStateChanged(ItemEvent e) {
-		if (e.getStateChange() == ItemEvent.SELECTED) {
-			
-			//Entrada de datos
-			
-			modelo = cboModelo.getSelectedIndex();
-			
-			
-			
-			//Precios según el modelo
-			switch (modelo) {
-				
-				case 0:
-					
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
-					// Suponiendo que el método cargarDesdeArchivoCinzaPlus es público y estático
-					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
-					
-					break;
-				
-				case 1:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
-					//
-					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
-					break;
-					
-				case 2:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
-					//
-					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
-					break;
-					
-				case 3:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
-					//
-					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
-					break;
-					
-				default:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
-					//
-					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
-			}
-		}
-		
-	}
 
-public void actionPerformedBtnVender(ActionEvent e) {
-	
-
-	try {
-	
-	//Declaración de variables
-	
-	DecimalFormat df = new DecimalFormat("#.00");
-	double imCom,imDes,imPag;
-	int cant,obsequio;
-	String modelo1;
-	
-	//Entrada de Datos
-	
-	cant = Integer.parseInt(txtCantidad.getText());
-	
-	//Obsequios
-	
-	if (cant <= 5)
-		obsequio = cant * Tienda1.obsequioCantidad1;
-	
-	else if (cant <= 10)
-		obsequio = cant * Tienda1.obsequioCantidad2;
-	
-	else
-		obsequio = cant * Tienda1.obsequioCantidad3;
-	
-	//Modelo
-
-	double precio0 = Double.parseDouble(txtPrecio.getText());
-	double precio1 = Double.parseDouble(txtPrecio.getText());
-	double precio2 = Double.parseDouble(txtPrecio.getText());
-	double precio3 = Double.parseDouble(txtPrecio.getText());
-	double precio4 = Double.parseDouble(txtPrecio.getText());
-	
-	
-	if (modelo == 0) {
-		modelo1 = "Cinza Plus";			 
-		imCom = precio0 * cant;
-	}
-	
-	else if (modelo == 1) {
-		modelo1 = "Luxury";
-		imCom = precio1 * cant;
-	}
-	
-	else if (modelo == 2) {
-		modelo1 = "Austria";
-		imCom = precio2 * cant;
-	}
-	
-	else if (modelo == 3) {
-		modelo1 = "Yungay Mix";
-		imCom = precio3 * cant;
-	}
-	
-	else {
-		modelo1 = "Thalía";
-		imCom = precio4 * cant;
-	}
-	
-	//Importe de descuento
-	
-	
-	if (cant >= 1)
-		imDes = imCom * Tienda1.porcentaje1;
-			
-	else if (cant >= 6)
-		imDes = imCom * Tienda1.porcentaje2;
-			
-	else if (cant >= 11)
-		imDes = imCom * Tienda1.porcentaje3;
-			
-	else 
-		imDes = imCom * Tienda1.porcentaje4;
-			
-	
-	//Importe a pagar
-	
-	imPag = imCom - imDes;
-	
-	//Salida de datos
-	
-	txtR.setText("BOLETA DE VENTA");
-	imprimir(" " + "\n");
-	txtR.append("Modelo                  : " + modelo1 + "\n");
-	txtR.append("Cantidad adquirida      : " + cant + "\n");
-	txtR.append("Importe compra          : S/. " + df.format(imCom) + "\n");
-	txtR.append("Importe descuento       : S/. " + df.format(imDes) + "\n");
-	txtR.append("Importe pagar           : S/. " + df.format(imPag) + "\n");
-	txtR.append("Tipo de obsequio        : Lapicero" + "\n");
-	txtR.append("Unidades obsequiadas    : " + obsequio);
-	
-    } catch (Exception c) {
-        // Este bloque se ejecutará para cualquier otra excepción no capturada
-        mostrarError("Error de sintaxis, puede de que hayas " + "\n"
-        			+"escrito letras o caracteres no adecuados " + "\n"
-        			+"o incluso no hayas escrito nada, el limite " + "\n"
-        			+"de cantidades es de un valor de 10 digitos maximo");
-    }	
-}
-
-private void handleClick() {
-    // Incrementar el contador
-    contador++;
-
-    // Mostrar el mensaje cada 5 clics
-    if (contador % 2 == 0) {
-        JOptionPane.showMessageDialog(this, "Has realizado " + contador + " clics", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-    }
-}
-
-public static void AvanceDeVentas(ActionEvent e) {
-	
-}
 
 public static void mostrarError(String mensaje) {
 JOptionPane.showOptionDialog(null, mensaje, "ERROR DE SINTAXIS", JOptionPane.DEFAULT_OPTION,

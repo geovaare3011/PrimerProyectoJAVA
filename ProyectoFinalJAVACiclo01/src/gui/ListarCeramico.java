@@ -34,6 +34,7 @@ public class ListarCeramico extends JFrame implements ActionListener{
 	private static DatosCeramico ceramicoActual3;
 
 	private static DatosCeramico ceramicoActual4;
+	
 	public static JTextField txtPrecio0;
 	public static JTextField txtCantidad0;
 	public static JTextField txtAncho0;

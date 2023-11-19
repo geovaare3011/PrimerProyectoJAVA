@@ -75,7 +75,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		getContentPane().add(btnCerrar);
 		
 		cboModelo = new JComboBox();
-		cboModelo.setModel(new DefaultComboBoxModel(new String[] {"Cinza Plus", "Luxury", "Austria", "Yungay Mix", "Thalía"}));
+		cboModelo.setModel(new DefaultComboBoxModel<String>(new String[] {"Cinza Plus", "Luxury", "Austria", "Yungay Mix", "Thalía"}));
 		cboModelo.setBounds(116, 7, 292, 22);
 		cboModelo.addActionListener(this);
 		cboModelo.addItemListener(this);

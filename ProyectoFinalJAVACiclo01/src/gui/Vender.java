@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import DatosDeCeramicos.DatosCeramico;
+
 import javax.swing.JComboBox;
 
 import java.awt.Font;
@@ -38,6 +39,8 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
 	private JButton btnCerrar;
 	private JScrollPane scrollPane;
 	private JTextArea txtR;
+    private int contador;
+    private int contadorClics = 0;
 
 	private static DatosCeramico ceramicoActual;
 	private static int modelo;
@@ -170,6 +173,7 @@ public static void Modelo() {
 		setLocationRelativeTo(null);		
 		getContentPane().setLayout(null);
 		iniciarComponentes();
+		
 	}
 	
 	public void iniciarComponentes() {
@@ -233,6 +237,11 @@ public static void Modelo() {
 		btnVender.addActionListener(this);
 		getContentPane().add(btnVender);
 		
+     
+		
+        // Añade el botón al centro de la ventana
+        getContentPane().add(btnVender);
+        
 		btnCerrar = new JButton("Cerrar");
 		btnCerrar.setBounds(335, 36, 89, 23);
 		btnCerrar.addActionListener(this);
@@ -245,6 +254,7 @@ public static void Modelo() {
 		txtR = new JTextArea();
 		txtR.setFont(new Font("Monospaced", Font.PLAIN, 12));
 		scrollPane.setViewportView(txtR);
+		
 	}
 
 
@@ -323,6 +333,8 @@ public static void Modelo() {
 	}
 
 public void actionPerformedBtnVender(ActionEvent e) {
+	
+
 	try {
 	
 	//Declaración de variables
@@ -417,8 +429,19 @@ public void actionPerformedBtnVender(ActionEvent e) {
         // Este bloque se ejecutará para cualquier otra excepción no capturada
         mostrarError("Error de sintaxis, puede de que hayas " + "\n"
         			+"escrito letras o caracteres no adecuados " + "\n"
-        			+"o incluso no hayas escrito nada");
+        			+"o incluso no hayas escrito nada, el limite " + "\n"
+        			+"de cantidades es de un valor de 10 digitos maximo");
     }	
+}
+
+private void handleClick() {
+    // Incrementar el contador
+    contador++;
+
+    // Mostrar el mensaje cada 5 clics
+    if (contador % 2 == 0) {
+        JOptionPane.showMessageDialog(this, "Has realizado " + contador + " clics", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+    }
 }
 
 public static void AvanceDeVentas(ActionEvent e) {

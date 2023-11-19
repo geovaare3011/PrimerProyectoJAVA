@@ -12,16 +12,17 @@ public class DatosCeramico {
     private double ancho;
     private double largo;
     private double espesor;
-    private String contenido;
+    private String cantidad;
+    
 
     // Constructor que acepta todos los parámetros
-    public DatosCeramico(String tipo, double precio, double ancho, double largo, double espesor, String contenido) {
+    public DatosCeramico(String tipo, double precio, double ancho, double largo, double espesor, String cantidad) {
         this.tipo = tipo;
         this.precio = precio;
         this.ancho = ancho;
         this.largo = largo;
         this.espesor = espesor;
-        this.contenido = contenido;
+        this.cantidad= cantidad;
     }
 
     //Métodos get
@@ -45,8 +46,8 @@ public class DatosCeramico {
         return espesor;
     }
     
-    public String getContenido() {
-        return contenido;
+    public String getCantidad() {
+        return cantidad;
     }
     
     //Métodos set
@@ -70,8 +71,8 @@ public class DatosCeramico {
     	this.espesor = nuevoEspesor;    	
     }
     
-    public void setContenido(String nuevoContenido) {	
-    	this.contenido = nuevoContenido;    	
+    public void setCantidad(String nuevoCantidad) {	
+    	this.cantidad = nuevoCantidad;    	
     }
     
     // Método para guardar Cinza Plus
@@ -82,7 +83,7 @@ public class DatosCeramico {
             writer.println(ancho);
             writer.println(largo);
             writer.println(espesor);
-            writer.println(contenido);
+            writer.println(cantidad);
             System.out.println("Datos guardados en " + CinzaPlus);
         } catch (IOException e) {
             e.printStackTrace();
@@ -97,9 +98,9 @@ public class DatosCeramico {
             double ancho = Double.parseDouble(scanner.nextLine());
             double largo = Double.parseDouble(scanner.nextLine());
             double espesor = Double.parseDouble(scanner.nextLine());
-            String contenido = scanner.nextLine();
+            String cantidad = scanner.nextLine();
 
-            return new DatosCeramico(tipo, precio, ancho, largo, espesor, contenido);
+            return new DatosCeramico(tipo, precio, ancho, largo, espesor, cantidad);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -115,7 +116,7 @@ public class DatosCeramico {
             writer.println(ancho);
             writer.println(largo);
             writer.println(espesor);
-            writer.println(contenido);
+            writer.println(cantidad);
             System.out.println("Datos guardados en " + Luxury);
         } catch (IOException e) {
             e.printStackTrace();
@@ -130,9 +131,9 @@ public class DatosCeramico {
             double ancho = Double.parseDouble(scanner.nextLine());
             double largo = Double.parseDouble(scanner.nextLine());
             double espesor = Double.parseDouble(scanner.nextLine());
-            String contenido = scanner.nextLine();
+            String cantidad = scanner.nextLine();
 
-            return new DatosCeramico(tipo, precio, ancho, largo, espesor, contenido);
+            return new DatosCeramico(tipo, precio, ancho, largo, espesor, cantidad);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -148,7 +149,7 @@ public class DatosCeramico {
             writer.println(ancho);
             writer.println(largo);
             writer.println(espesor);
-            writer.println(contenido);
+            writer.println(cantidad);
             System.out.println("Datos guardados en " + Austria);
         } catch (IOException e) {
             e.printStackTrace();
@@ -163,9 +164,9 @@ public class DatosCeramico {
             double ancho = Double.parseDouble(scanner.nextLine());
             double largo = Double.parseDouble(scanner.nextLine());
             double espesor = Double.parseDouble(scanner.nextLine());
-            String contenido = scanner.nextLine();
+            String cantidad = scanner.nextLine();
 
-            return new DatosCeramico(tipo, precio, ancho, largo, espesor, contenido);
+            return new DatosCeramico(tipo, precio, ancho, largo, espesor, cantidad);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -181,7 +182,7 @@ public class DatosCeramico {
             writer.println(ancho);
             writer.println(largo);
             writer.println(espesor);
-            writer.println(contenido);
+            writer.println(cantidad);
             System.out.println("Datos guardados en " + YungayMix);
         } catch (IOException e) {
             e.printStackTrace();
@@ -196,9 +197,9 @@ public class DatosCeramico {
             double ancho = Double.parseDouble(scanner.nextLine());
             double largo = Double.parseDouble(scanner.nextLine());
             double espesor = Double.parseDouble(scanner.nextLine());
-            String contenido = scanner.nextLine();
+            String cantidad = scanner.nextLine();
 
-            return new DatosCeramico(tipo, precio, ancho, largo, espesor, contenido);
+            return new DatosCeramico(tipo, precio, ancho, largo, espesor, cantidad);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -214,7 +215,7 @@ public class DatosCeramico {
             writer.println(ancho);
             writer.println(largo);
             writer.println(espesor);
-            writer.println(contenido);
+            writer.println(cantidad);
             System.out.println("Datos guardados en " + Thalía);
         } catch (IOException e) {
             e.printStackTrace();
@@ -229,9 +230,9 @@ public class DatosCeramico {
             double ancho = Double.parseDouble(scanner.nextLine());
             double largo = Double.parseDouble(scanner.nextLine());
             double espesor = Double.parseDouble(scanner.nextLine());
-            String contenido = scanner.nextLine();
+            String cantidad = scanner.nextLine();
 
-            return new DatosCeramico(tipo, precio, ancho, largo, espesor, contenido);
+            return new DatosCeramico(tipo, precio, ancho, largo, espesor, cantidad);
         } catch (IOException e) {
             e.printStackTrace();
             return null;

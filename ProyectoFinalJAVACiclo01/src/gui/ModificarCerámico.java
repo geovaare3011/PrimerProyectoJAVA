@@ -1,6 +1,5 @@
 package gui;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -30,7 +29,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	private static JTextField txtAncho;
 	private static JTextField txtLargo;
 	private static JTextField txtEspesor;
-	private static JTextField txtContenido;
+	private static JTextField txtCantidad;
 	private JButton btnGuardar;
 	private static DatosCeramico ceramicoActual;
 	private static int modelo;
@@ -83,25 +82,26 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		getContentPane().add(cboModelo);
 		
 		modelo = cboModelo.getSelectedIndex();
-		switch (modelo) {
-			case 0:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusDefault.txt");
-				break;
-			
-			case 1:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryDefault.txt");
-				break;
-			
-			case 2:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaDefault.txt");
-				break;
-			
-			case 3:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixDefault.txt");
-				break;
-			
-			default:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaDefault.txt");
+		switch(modelo) {
+		case 0:
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+			break;
+		
+		case 1:
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+			break;
+		
+		case 2:
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+			break;
+		
+		case 3:
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+			break;
+		
+		default:
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+	
 		}
 		
 		
@@ -129,11 +129,11 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		txtEspesor.setBounds(116, 108, 292, 20);
 		getContentPane().add(txtEspesor);
 		
-		txtContenido = new JTextField(ceramicoActual.getContenido());
-		txtContenido.setEditable(true);
-		txtContenido.setColumns(10);
-		txtContenido.setBounds(116, 133, 292, 20);
-		getContentPane().add(txtContenido);
+		txtCantidad = new JTextField(ceramicoActual.getCantidad());
+		txtCantidad.setEditable(true);
+		txtCantidad.setColumns(10);
+		txtCantidad.setBounds(116, 133, 292, 20);
+		getContentPane().add(txtCantidad);
 		
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(449, 32, 89, 23);
@@ -171,23 +171,23 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		
 			switch(modelo) {
 			case 0:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusDefault.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
 				break;
 			
 			case 1:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryDefault.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
 				break;
 			
 			case 2:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaDefault.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
 				break;
 			
 			case 3:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixDefault.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
 				break;
 			
 			default:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaDefault.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
 		
 			}
 		}			
@@ -196,10 +196,93 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		//Acción del botón Cerrar
 		public void actionPerformedBtnCerrar (ActionEvent e ) {
 			dispose();
+		}		
+		
+		private void actualizarDatosCeramico() {
+	        // Actualizar ceramicoActual con los datos del tipo de cerámico seleccionado
+	        String tipoSeleccionado = (String) cboModelo.getSelectedItem();
+	        ceramicoActual.setTipo(tipoSeleccionado);
+
+	        // Actualizar los JTextFields con los nuevos datos
+	        txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
+	        txtAncho.setText(String.valueOf(ceramicoActual.getAncho()));
+	        txtLargo.setText(String.valueOf(ceramicoActual.getLargo()));
+	        txtEspesor.setText(String.valueOf(ceramicoActual.getEspesor()));
+	        txtCantidad.setText(ceramicoActual.getCantidad());
+	    }
+		
+		private void guardarDatosCeramicoCinzaPlus() {
+	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
+	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
+	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
+	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
+	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
+	        ceramicoActual.setCantidad(txtCantidad.getText());
+
+	        // Guardar los datos en un archivo
+	        ceramicoActual.guardarEnArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+			
+			
+		}
+		
+		private void guardarDatosCeramicoLuxury() {
+	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
+	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
+	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
+	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
+	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
+	        ceramicoActual.setCantidad(txtCantidad.getText());
+
+	        // Guardar los datos en un archivo
+	        ceramicoActual.guardarEnArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+			
+			
+		}
+		
+		private void guardarDatosCeramicoAustria() {
+	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
+	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
+	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
+	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
+	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
+	        ceramicoActual.setCantidad(txtCantidad.getText());
+
+	        // Guardar los datos en un archivo
+	        ceramicoActual.guardarEnArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+			
+			
+		}
+		
+		private void guardarDatosCeramicoYungayMix() {
+	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
+	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
+	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
+	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
+	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
+	        ceramicoActual.setCantidad(txtCantidad.getText());
+
+	        // Guardar los datos en un archivo
+	        ceramicoActual.guardarEnArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+			
+			
+		}
+		
+		private void guardarDatosCeramicoThalia() {
+	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
+	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
+	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
+	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
+	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
+	        ceramicoActual.setCantidad(txtCantidad.getText());
+
+	        // Guardar los datos en un archivo
+	        ceramicoActual.guardarEnArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+			
+			
 		}
 		
 		public void actionPerformedBtnGuardar(ActionEvent e) {
-	
+			
 			modelo = cboModelo.getSelectedIndex();
 			switch (modelo) {
 				case 0:
@@ -221,89 +304,5 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 				default:
 					guardarDatosCeramicoThalia();
 			}
-		}
-		
-		
-		private void actualizarDatosCeramico() {
-	        // Actualizar ceramicoActual con los datos del tipo de cerámico seleccionado
-	        String tipoSeleccionado = (String) cboModelo.getSelectedItem();
-	        ceramicoActual.setTipo(tipoSeleccionado);
-
-	        // Actualizar los JTextFields con los nuevos datos
-	        txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
-	        txtAncho.setText(String.valueOf(ceramicoActual.getAncho()));
-	        txtLargo.setText(String.valueOf(ceramicoActual.getLargo()));
-	        txtEspesor.setText(String.valueOf(ceramicoActual.getEspesor()));
-	        txtContenido.setText(ceramicoActual.getContenido());
-	    }
-		
-		private void guardarDatosCeramicoCinzaPlus() {
-	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
-	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
-	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
-	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
-	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
-	        ceramicoActual.setContenido(txtContenido.getText());
-
-	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoCinzaPlus("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
-			
-			
-		}
-		
-		private void guardarDatosCeramicoLuxury() {
-	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
-	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
-	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
-	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
-	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
-	        ceramicoActual.setContenido(txtContenido.getText());
-
-	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoLuxury("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
-			
-			
-		}
-		
-		private void guardarDatosCeramicoAustria() {
-	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
-	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
-	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
-	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
-	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
-	        ceramicoActual.setContenido(txtContenido.getText());
-
-	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoAustria("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
-			
-			
-		}
-		
-		private void guardarDatosCeramicoYungayMix() {
-	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
-	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
-	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
-	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
-	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
-	        ceramicoActual.setContenido(txtContenido.getText());
-
-	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoYungayMix("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
-			
-			
-		}
-		
-		private void guardarDatosCeramicoThalia() {
-	        // Guardar los datos ingresados por el usuario en el objeto ceramicoActual
-	        ceramicoActual.setPrecio(Double.parseDouble(txtPrecio.getText()));
-	        ceramicoActual.setAncho(Double.parseDouble(txtAncho.getText()));
-	        ceramicoActual.setLargo(Double.parseDouble(txtLargo.getText()));
-	        ceramicoActual.setEspesor(Double.parseDouble(txtEspesor.getText()));
-	        ceramicoActual.setContenido(txtContenido.getText());
-
-	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoThalia("C:\\Users\\User\\git\\PrimerProyectoJAVA\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
-			
-			
 		}
 	}

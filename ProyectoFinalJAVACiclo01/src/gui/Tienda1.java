@@ -46,12 +46,11 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 	private static JComboBox<String> cboModelo;
 	
 	
-	private static DatosCeramico ceramico0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
-	private static DatosCeramico ceramico1 = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
-	private static DatosCeramico ceramico2 = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
-	private static DatosCeramico ceramico3 = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
-	private static DatosCeramico ceramico4 = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
-
+	private static DatosCeramico ceramico0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+	private static DatosCeramico ceramico1 = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+	private static DatosCeramico ceramico2 = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+	private static DatosCeramico ceramico3 = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+	private static DatosCeramico ceramico4 = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
 
 	
 	// Datos mínimos del primer producto

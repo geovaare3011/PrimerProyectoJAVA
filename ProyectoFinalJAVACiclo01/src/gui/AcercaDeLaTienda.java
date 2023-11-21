@@ -51,22 +51,22 @@ public class AcercaDeLaTienda extends JFrame implements ActionListener{
 		lblAutores.setBounds(151, 78, 89, 14);
 		getContentPane().add(lblAutores);
 		
-		lblRenan = new JLabel("Renan Osorio (...)");
+		lblRenan = new JLabel("Renán Osorio (...)");
 		lblRenan.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblRenan.setBounds(130, 122, 151, 14);
 		getContentPane().add(lblRenan);
 		
-		lblGeovani = new JLabel("Giovani Guevara (...)");
+		lblGeovani = new JLabel("Giovanni Guevara (...)");
 		lblGeovani.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblGeovani.setBounds(130, 172, 141, 14);
 		getContentPane().add(lblGeovani);
 		
-		lblAlexandra = new JLabel("Alexandra Rivera (...)");
+		lblAlexandra = new JLabel("Ruvi Alexandra Rivera (...)");
 		lblAlexandra.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblAlexandra.setBounds(130, 147, 110, 14);
 		getContentPane().add(lblAlexandra);
 		
-		lblAbigail = new JLabel("Abigail Martinez (...)");
+		lblAbigail = new JLabel("Ruth Abigail Martinez (...)");
 		lblAbigail.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblAbigail.setBounds(130, 197, 134, 14);
 		getContentPane().add(lblAbigail);

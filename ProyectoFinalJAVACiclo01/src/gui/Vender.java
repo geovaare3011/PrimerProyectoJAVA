@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import DatosDeCeramicos.DatosCeramico;
-import Experimentos.VentanaClics;
+
 
 import javax.swing.JComboBox;
 
@@ -47,11 +47,11 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
 	private static DatosCeramico ceramicoActual;
 	private static int modelo;
 	public static int modelo01;
-	private static DatosCeramico ceramico0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
-	private static DatosCeramico ceramico1 = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
-	private static DatosCeramico ceramico2 = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
-	private static DatosCeramico ceramico3 = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
-	private static DatosCeramico ceramico4 = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+	private static DatosCeramico ceramico0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+	private static DatosCeramico ceramico1 = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+	private static DatosCeramico ceramico2 = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+	private static DatosCeramico ceramico3 = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+	private static DatosCeramico ceramico4 = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
 
 
 	
@@ -143,32 +143,32 @@ public class Vender extends JFrame implements ActionListener, ItemListener{
 				
 				case 0:
 					
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
 					// Suponiendo que el método cargarDesdeArchivoCinzaPlus es público y estático
 					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
 					
 					break;
 				
 				case 1:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
 					//
 					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
 					break;
 					
 				case 2:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
 					//
 					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
 					break;
 					
 				case 3:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
 					//
 					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
 					break;
 					
 				default:
-					ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+					ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
 					//
 					txtPrecio.setText(String.valueOf(ceramicoActual.getPrecio()));
 			}
@@ -282,23 +282,23 @@ public static void Modelo2() {
 	
 		switch(modelo) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
 	
 		}
 	}	
@@ -311,23 +311,23 @@ public static void Modelo() {
 		
 		switch(modelo) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
 	
 		}
 		
@@ -368,23 +368,23 @@ public static void Modelo() {
 		
 		switch(modelo01) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
 	
 		}
 		

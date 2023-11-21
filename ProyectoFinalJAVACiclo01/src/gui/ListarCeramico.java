@@ -148,16 +148,16 @@ public class ListarCeramico extends JFrame implements ActionListener{
 	
 	public void actionPerformedActualizar(ActionEvent e) {
 		
-		ceramicoActual0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\CinzaPlusEdit.txt");
-
-		ceramicoActual1 = DatosCeramico.cargarDesdeArchivoLuxury("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\LuxuryEdit.txt");
-
-		ceramicoActual2 = DatosCeramico.cargarDesdeArchivoAustria("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\AustriaEdit.txt");
-
-		ceramicoActual3 = DatosCeramico.cargarDesdeArchivoYungayMix("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\YungayMixEdit.txt");
-
-		ceramicoActual4 = DatosCeramico.cargarDesdeArchivoThalia("C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\Modelos\\ThalíaEdit.txt");
-	
+		ceramicoActual0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+		
+		ceramicoActual1 = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+		
+		ceramicoActual2 = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+		
+		ceramicoActual3 = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+		
+		ceramicoActual4 = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+		
 		
 		txtPrecio0 = new JTextField(String.valueOf(ceramicoActual0.getPrecio()));
 		txtAncho0 = new JTextField(String.valueOf(ceramicoActual0.getAncho()));

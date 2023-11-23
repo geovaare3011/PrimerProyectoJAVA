@@ -46,11 +46,11 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 	private static JComboBox<String> cboModelo;
 	
 	
-	private static DatosCeramico ceramico0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
-	private static DatosCeramico ceramico1 = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
-	private static DatosCeramico ceramico2 = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
-	private static DatosCeramico ceramico3 = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
-	private static DatosCeramico ceramico4 = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+	private static DatosCeramico ceramico0 = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
+	private static DatosCeramico ceramico1 = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
+	private static DatosCeramico ceramico2 = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
+	private static DatosCeramico ceramico3 = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
+	private static DatosCeramico ceramico4 = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 
 	
 	// Datos mínimos del primer producto
@@ -169,11 +169,11 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 		mntmCdescuentos.addActionListener(this);
 		mnConfiguración.add(mntmCdescuentos);
 		
-		mntmCobsequios = new JMenuItem("Configurar obsequiios");
+		mntmCobsequios = new JMenuItem("Configurar obsequios");
 		mntmCobsequios.addActionListener(this);
 		mnConfiguración.add(mntmCobsequios);
 		
-		mntmCcoptimo = new JMenuItem("Configurar cantidad óptimo");
+		mntmCcoptimo = new JMenuItem("Configurar cantidad óptima");
 		mntmCcoptimo.addActionListener(this);
 		mnConfiguración.add(mntmCcoptimo);
 		
@@ -257,19 +257,16 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 		
 		//Direcciona las acciones de los botones
 		
+		public void actionPerfomedMntmSalir(ActionEvent e) {
+			System.exit(0);
+		}
+		
 		public void actionPerfomedMntmCceramico(ActionEvent e) {
 			ConsultarCerámico ventana = new ConsultarCerámico ();
 			ventana.setVisible(true);
 			ConsultarCerámico.Modelo();
 		}
-		
-		
-		
-		public void actionPerfomedMntmSalir(ActionEvent e) {
-			System.exit(0);
-		}
-		
-		
+	
 		public void actionPerfomedMntmMceramico(ActionEvent e) {
 			ModificarCerámico ventana2 = new ModificarCerámico ();
 			ventana2.setVisible(true);
@@ -282,6 +279,11 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 			
 		}
 		
+		public void actionPerfomedMntmVender(ActionEvent e) {
+			Vender ventana4 = new Vender();
+			ventana4.setVisible(true);
+		}
+		
 		public void actionPerfomedMntmGreportes(ActionEvent e) {
 			GenerarReportes ventana5 = new GenerarReportes();
 			ventana5.setVisible(true);
@@ -289,22 +291,26 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 		
 		
 		public void actionPerfomedMntmCdescuentos(ActionEvent e) {
-			
+			ConfigurarDescuentos ventana6 = new ConfigurarDescuentos();
+			ventana6.setVisible(true);
 		}
 
 		
 		public void actionPerfomedMntmCobsequio(ActionEvent e) {
-			
+			ConfigurarObsequio ventana7 = new ConfigurarObsequio();
+			ventana7.setVisible(true);
 		}
 
 		
 		public void actionPerfomedMntmCcoptimo(ActionEvent e) {
-			
+			ConfigurarCantidadOptima ventana8 = new ConfigurarCantidadOptima();
+			ventana8.setVisible(true);
 		}
 		
 		
 		public void actionPerfomedMntmCcdiaria(ActionEvent e) {
-			
+			ConfigurarCuotaDiaria ventana9 = new ConfigurarCuotaDiaria();
+			ventana9.setVisible(true);
 		}
 		
 		
@@ -312,12 +318,7 @@ public class Tienda1 extends JFrame  implements ActionListener, ItemListener {
 			AcercaDeLaTienda ventana10 = new AcercaDeLaTienda();
 			ventana10.setVisible(true);  
 		}
-		
-		public void actionPerfomedMntmVender(ActionEvent e) {
-			Vender ventana4 = new Vender();
-			ventana4.setVisible(true);
-		}
-		
+
 		@Override
 		public void itemStateChanged(ItemEvent e) {
 			// TODO Auto-generated method stub

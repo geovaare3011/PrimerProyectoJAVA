@@ -13,6 +13,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import DatosDeCeramicos.DatosCeramico;
+import Modelos._01CinzaPlusEdit;
+import Modelos._02LuxuryEdit;
+import Modelos._03AustriaEdit;
+import Modelos._04YungayMixEdit;
+import Modelos._05ThaliaEdit;
+
 
 public class ModificarCerámico extends JFrame implements ActionListener, ItemListener {
 
@@ -84,23 +90,24 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		modelo = cboModelo.getSelectedIndex();
 		switch(modelo) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
+			
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 	
 		}
 		
@@ -171,23 +178,23 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 		
 			switch(modelo) {
 			case 0:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
 				break;
 			
 			case 1:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 				break;
 			
 			case 2:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 				break;
 			
 			case 3:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 				break;
 			
 			default:
-				ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+				ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 		
 			}
 		}			
@@ -220,7 +227,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	        ceramicoActual.setCantidad(txtCantidad.getText());
 
 	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+	        ceramicoActual.guardarEnArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
 			
 
 		}
@@ -234,7 +241,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	        ceramicoActual.setCantidad(txtCantidad.getText());
 
 	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoLuxury("Modelos\\LuxuryEdit.txt");
+	        ceramicoActual.guardarEnArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 			
 			
 		}
@@ -248,7 +255,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	        ceramicoActual.setCantidad(txtCantidad.getText());
 
 	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoAustria("Modelos\\AustriaEdit.txt");
+	        ceramicoActual.guardarEnArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 			
 			
 		}
@@ -262,7 +269,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	        ceramicoActual.setCantidad(txtCantidad.getText());
 
 	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+	        ceramicoActual.guardarEnArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 			
 			
 		}
@@ -276,7 +283,7 @@ public class ModificarCerámico extends JFrame implements ActionListener, ItemLi
 	        ceramicoActual.setCantidad(txtCantidad.getText());
 
 	        // Guardar los datos en un archivo
-	        ceramicoActual.guardarEnArchivoThalia("Modelos\\ThalíaEdit.txt");
+	        ceramicoActual.guardarEnArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 			
 			
 		}

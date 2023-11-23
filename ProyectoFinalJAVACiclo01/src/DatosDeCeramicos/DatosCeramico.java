@@ -15,6 +15,8 @@ public class DatosCeramico {
     private String cantidad;
     
 
+    public static String ruta = "C:\\Users\\51921\\git\\JAVAProyecto\\ProyectoFinalJAVACiclo01\\";
+    
     // Constructor que acepta todos los parámetros
     public DatosCeramico(String tipo, double precio, double ancho, double largo, double espesor, String cantidad) {
         this.tipo = tipo;

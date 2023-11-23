@@ -100,23 +100,23 @@ public class ConsultarCerámico extends JFrame implements ActionListener, ItemLi
 		
 		switch(modelo) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 		}
 		
 		txtPrecio = new JTextField(String.valueOf(ceramicoActual.getPrecio()));
@@ -183,23 +183,23 @@ public class ConsultarCerámico extends JFrame implements ActionListener, ItemLi
 	
 		switch(modelo) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 	
 		}
 	}	
@@ -213,23 +213,23 @@ public class ConsultarCerámico extends JFrame implements ActionListener, ItemLi
 		
 		switch(modelo) {
 		case 0:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
 			break;
 		
 		case 1:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 			break;
 		
 		case 2:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 			break;
 		
 		case 3:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 			break;
 		
 		default:
-			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+			ceramicoActual = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 	
 		}
 		

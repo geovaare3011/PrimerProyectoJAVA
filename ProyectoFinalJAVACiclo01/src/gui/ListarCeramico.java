@@ -148,15 +148,15 @@ public class ListarCeramico extends JFrame implements ActionListener{
 	
 	public void actionPerformedActualizar(ActionEvent e) {
 		
-		ceramicoActual0 = DatosCeramico.cargarDesdeArchivoCinzaPlus("Modelos\\CinzaPlusEdit.txt");
+		ceramicoActual0 = DatosCeramico.cargarDesdeArchivoCinzaPlus(DatosCeramico.ruta + "Modelos\\CinzaPlusEdit.txt");
 		
-		ceramicoActual1 = DatosCeramico.cargarDesdeArchivoLuxury("Modelos\\LuxuryEdit.txt");
+		ceramicoActual1 = DatosCeramico.cargarDesdeArchivoLuxury(DatosCeramico.ruta + "Modelos\\LuxuryEdit.txt");
 		
-		ceramicoActual2 = DatosCeramico.cargarDesdeArchivoAustria("Modelos\\AustriaEdit.txt");
+		ceramicoActual2 = DatosCeramico.cargarDesdeArchivoAustria(DatosCeramico.ruta + "Modelos\\AustriaEdit.txt");
 		
-		ceramicoActual3 = DatosCeramico.cargarDesdeArchivoYungayMix("Modelos\\YungayMixEdit.txt");
+		ceramicoActual3 = DatosCeramico.cargarDesdeArchivoYungayMix(DatosCeramico.ruta + "Modelos\\YungayMixEdit.txt");
 		
-		ceramicoActual4 = DatosCeramico.cargarDesdeArchivoThalia("Modelos\\ThalíaEdit.txt");
+		ceramicoActual4 = DatosCeramico.cargarDesdeArchivoThalia(DatosCeramico.ruta + "Modelos\\ThaliaEdit.txt");
 		
 		
 		txtPrecio0 = new JTextField(String.valueOf(ceramicoActual0.getPrecio()));
